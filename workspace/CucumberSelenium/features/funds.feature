@@ -1,7 +1,7 @@
 Feature: Fund Transfer
 
   Scenario: Fund transfer within the bank
-    Given User should be logged in Successfully
+    Given User should be logged in Successfully And should be navigated to Funds transfer page
     And Target account should be present And there should be sufficient account balance
     When user selects Target account And click on Funds Transfer
     Then User account should be Debited And Target account should be Credited
@@ -25,18 +25,20 @@ Feature: Fund Transfer
   #Scenario
   Scenario: User clicks on Back button
     Given User should be logged in Successfully And should be navigated to Funds transfer page
-    When I click on Back button
-    Then Error message should be displayed #"Your session has expired"
+    When I click on the Back button
+    Then Back button should not work
 
   #Scenario
   Scenario: Logout from Funds Transfer page
     Given User should be logged in Successfully And should be navigated to Funds transfer page
-    When I click on Logout button
-    Then User should be logged out successfully
+    When I click on the Logout button
+    Then User should be logged out of the bank application successfully
 
   ## - Outside bank
+  @UnderTest
   Scenario Outline: Fund transfer outside the bank
-    Given User should be logged in Successfully
+    Given User should be logged in Successfully And should be navigated to Funds transfer page
+    And User navigates to Outside bank
     And Target account should be present And there should be sufficient account balance in From Account
     When user enters <From Account>, <Target Account> And <IFSC Code> And click on Funds Transfer
     Then User <From Account> should be Debited And <Target Account> should be Credited
@@ -62,5 +64,3 @@ Feature: Fund Transfer
     Given User should be logged in Successfully And should be navigated to Funds transfer page
     When User enters valid account number And Invalid amount
     Then Proper error message should be displayed #Invalid Amount - 0.0, -234 #
-    
-

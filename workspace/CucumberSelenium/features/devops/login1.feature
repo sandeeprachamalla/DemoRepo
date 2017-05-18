@@ -19,7 +19,7 @@ Feature: User Login Scenarios
     And Close Browser Window
 
   #Scenario3
-  #@UnderTest
+ #@UnderTest
   Scenario Outline: Valid User Login for registered user across multiple browsers
     Given Registered user is configured in system
     And open <browser> and launch the Bank url
@@ -36,6 +36,7 @@ Feature: User Login Scenarios
       | Firefox |
 
   #Scenario4
+@UnderTest
   Scenario: Valid User Login for registered user
     Given Registered user is configured in system
     And open Chrome browser and launch the Bank url
@@ -46,6 +47,7 @@ Feature: User Login Scenarios
     And Close Browser Window
 
   #Scenario5
+
   Scenario: Valid User Login for registered user
     Given Registered user is configured in system
     And open Chrome browser and launch the Bank url
@@ -56,6 +58,7 @@ Feature: User Login Scenarios
     And Close Browser Window
 
   #Scenario6
+
   Scenario: Invalid User Login for registered user
     Given Registered user is configured in system
     And open Chrome browser and launch the Bank url
@@ -66,6 +69,7 @@ Feature: User Login Scenarios
     And Close Browser Window
 
   #Scenario7
+ 
   Scenario: Invalid User Login for registered user
     Given Registered user is configured in system
     And open Chrome browser and launch the Bank url
@@ -76,6 +80,7 @@ Feature: User Login Scenarios
     And Close Browser Window
 
   #Scenario8
+ 
   Scenario: Invalid User Login for registered user
     Given Registered user is configured in system
     And open Chrome browser and launch the Bank url
@@ -86,6 +91,7 @@ Feature: User Login Scenarios
     And Close Browser Window
 
   #Scenario9
+ 
   Scenario: Invalid User Login for non-registered user
     Given User is not registered in the system
     And open Chrome browser and launch the Bank url
@@ -97,6 +103,7 @@ Feature: User Login Scenarios
 
 
   #Scenario10.0
+    
   Scenario: Invalid User Login for registered user
     Given Registered user is configured in system
     And open Chrome browser and launch the Bank url
@@ -107,6 +114,7 @@ Feature: User Login Scenarios
     And Close Browser Window
 
   #Scenario10.1
+    
   Scenario Outline: Account Lock for 4 consecutive Incorrect login attempts
     Given Registered user is configured in system
     And open Chrome browser and launch the Bank url
@@ -124,7 +132,7 @@ Feature: User Login Scenarios
       | akash    | abcda    |
 
   #Scenario11
- 
+  
   Scenario: Attempt to login for the locked Account
     Given Registered user is configured in system
     And open Chrome browser and launch the Bank url
@@ -136,7 +144,7 @@ Feature: User Login Scenarios
 
   #Reset should be done in backend on database - have a column to update the status of the User - Active/Inactive/Locked
   #Scenario12
-  
+
   Scenario: Attempt to login for the locked Account after reset
     Given Registered user is configured in system
     And open Chrome browser and launch the Bank url
@@ -147,7 +155,7 @@ Feature: User Login Scenarios
     And Close Browser Window
 
   #Scenario13
-
+ 
   Scenario: Attempt to enter 11 character User Id
     Given Registered user is configured in system
     And open Chrome browser and launch the Bank url
@@ -157,7 +165,7 @@ Feature: User Login Scenarios
     And Close Browser Window
 
   #Scenario14
-   
+  
   Scenario: Account Statement page
     Given Registered user is configured in system
     And open Chrome browser and launch the Bank url
@@ -181,16 +189,16 @@ Feature: User Login Scenarios
     And Close Browser Window
     
   #Scenario16
- 
+
   Scenario: User clicks on Back button
     Given Registered user is configured in system
     And User is logged in successfully
     When I click on Back button
-    Then Error message should be displayed #"Your session has expired"
+    Then Back button should be disabled 
     And Close Browser Window
     
   #Scenario17
-
+ 
   Scenario: Logout from User Home page
     Given Registered user is configured in system
     And User is logged in successfully
