@@ -15,7 +15,7 @@ public class fundstr {
 	WebDriver driver;
 	ConfigReaderft config1 = new ConfigReaderft();
 	
-	@Given("^User should be logged in Successfully And should be navigated to Funds transfer page$")
+	@Given("^User should be logged in successfully And should be navigated to Funds transfer page$")
 	public void User_should_be_logged_in_Successfully_And_should_be_navigated_to_Funds_transfer_page() throws Throwable {
 		System.setProperty("webdriver.chrome.driver", config1.getChromepath());
 		driver=new ChromeDriver();

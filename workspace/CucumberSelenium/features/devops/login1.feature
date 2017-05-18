@@ -36,7 +36,7 @@ Feature: User Login Scenarios
       | Firefox |
 
   #Scenario4
-@UnderTest
+
   Scenario: Valid User Login for registered user
     Given Registered user is configured in system
     And open Chrome browser and launch the Bank url
@@ -165,7 +165,7 @@ Feature: User Login Scenarios
     And Close Browser Window
 
   #Scenario14
-  
+  @UnderTest
   Scenario: Account Statement page
     Given Registered user is configured in system
     And open Chrome browser and launch the Bank url

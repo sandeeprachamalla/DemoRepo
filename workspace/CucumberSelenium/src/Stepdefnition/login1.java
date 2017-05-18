@@ -148,9 +148,9 @@ public class login1 {
 	@Then("^User homepage should have Username entry in the screen$")
 	public void User_homepage_should_have_Username_entry_in_the_screen() throws Throwable {
 		Thread.sleep(2000);
-		WebElement e1 = driver.findElement(By.id(config.Welcomemsg()));
+		WebElement e1 = driver.findElement(By.xpath(config.Welcomemsgxpath()));
 		System.out.println(e1.getText());
-	    	if(e1.getText().equals("Welcome to Retail eBanking !")){
+	    	if(e1.getText().equals("Welcome to Infy DevOps Net banking!!")){
 	    	 System.out.println("User Logged in Successfully");
 	    }
 	    	else{
