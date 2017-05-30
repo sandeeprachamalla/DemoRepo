@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+
 public class ConfigReader {
 	Properties pro;
 	public ConfigReader(){   // Created constructor to Initialize data
