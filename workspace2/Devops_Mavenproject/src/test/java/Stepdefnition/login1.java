@@ -19,6 +19,7 @@ import cucumber.api.java.en.When;
 
 public class login1 {
 	
+	
 	WebDriver driver;
 	ConfigReader config = new ConfigReader();
     //String HTTPBankurl="http://10.219.73.120:8034/Pid_G_v8.0/faces/login.jsp";
